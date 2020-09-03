@@ -15,7 +15,10 @@
   </div>
   <div v-else>
     <v-textarea
+      :required="$attrs.required"
+      :maxlength="$attrs.maxlength"
       :rows="$attrs.rows"
+      :placeholder="$attrs.placeholder"
       :label="$attrs.label"
       v-model="content"
       :rules="rules"

@@ -1,7 +1,6 @@
 <template>
   <v-text-field
     v-model="content"
-    v-mask="mask"
     type="tel"
     v-bind="$attrs"
     :rules="rules"
@@ -30,12 +29,18 @@ Vue.use(VueTheMask);
 
 export default {
   props: {
+    invalidPhoneMsg: {
+      type: String,
+      default: () => "Vous devez entrer un numéro de téléphone valide."
+    },
     mask: {
       type: String,
       default: () => "##.##.##.##.##"
     }
   },
-
+mounted() {
+    this.rules.push(v => /^[/\-.+()# 0-9]*$/.test(v) || this.invalidPhoneMsg);
+  },
   inheritAttrs: false,
   mixins: [ednRequired, ednVModel]
 };

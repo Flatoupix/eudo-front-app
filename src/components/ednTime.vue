@@ -29,12 +29,14 @@
   >
     <template v-slot:activator="{ on }">
       <v-text-field
+        :required="$attrs.required"
         :ename="$attrs.ename"
         :id="$attrs.id"
         v-model="content"
         :disabled="$attrs.disabled"
         :label="$attrs.label"
         v-on="on"
+        v-on:click:append="menu=true"
         :rules="rules"
         append-icon="mdi-clock-time-four"
       ></v-text-field>
