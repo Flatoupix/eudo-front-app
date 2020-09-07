@@ -405,6 +405,26 @@ var oCities: [
 
 # Changelog
 
+#### @0.1.23
+
+### `<edn-date/>`
+
+- Hérite de l'attribut required
+- Ajout de l'action du click sur l'iconne
+
+### `<edn-memo/>`
+
+- Hérite de l'attribut required et maxlength
+
+### `<edn-phone/>`
+
+- Enlever le mask
+
+### `<edn-time/>`
+
+- Hérite de l'attribut required
+- Ajout de l'action du click sur l'iconne
+
 #### @0.1.22
 
 ### `<edn-memo/>`
