@@ -407,6 +407,12 @@ var oCities: [
 
 #### @0.1.23
 
+### `<edn-memo/>`
+
+- Ajout d'un tooltip sur le textarea
+
+#### @0.1.23
+
 ### `<edn-date/>`
 
 - Hérite de l'attribut required
