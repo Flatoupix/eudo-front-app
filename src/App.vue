@@ -25,6 +25,7 @@
         ></edn-num> -->
         <edn-field label="edn-field" v-model="urlString"></edn-field>
         <edn-url label="edn-url" v-model="urlString" readonly></edn-url>
+        <edn-copypaste label="edn-copypaste" v-model="copypasteString" readonly></edn-copypaste>
         <edn-cat label="edn-cat" v-model="selectedCat" :items="cat"></edn-cat>
         <edn-cat-x
           label="edn-cat-x"
@@ -115,11 +116,13 @@ export default {
           value: '2',
         },
       ],
-      contentAbc: 'abcdefghijklmnopqtrsuvwxyz',
-      date: '',
-      time: '',
-      phone: '',
-      urlString: 'www.google.com',
+      contentAbc: "abcdefghijklmnopqtrsuvwxyz",
+      date: "",
+      time: "",
+      phone: "",
+      urlString: "www.google.com",
+      copypasteString:
+        '<script src="https://dev.eudonet.com/app/frm?tok=0D1BB1BA&cs=WLk7d-nU8RbrWpdMV7BlpeFzaizM5NzA&p=MMXJDpph5BKrGjAsUTHZoCl_H2ohON0ymyOapirv9fs%3d"/>',
       urlErrorUpdate: false,
 
       //Datas du mode liste

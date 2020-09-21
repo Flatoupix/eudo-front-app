@@ -15,6 +15,7 @@ import EdnLine from "./ednLine";
 import EdnColor from "./ednColor";
 import EdnLoad from "./ednLoad";
 import EdnUrl from "./ednUrl";
+import EdnCopyPaste from "./ednCopyPaste";
 import EdnListMod from "./ednListMod";
 import EdnDateTime from "./ednDateTime";
 
@@ -37,6 +38,7 @@ const eudoFront = {
     Vue.component("edn-color", EdnColor);
     Vue.component("edn-load", EdnLoad);
     Vue.component("edn-url", EdnUrl);
+    Vue.component("edn-copypaste", EdnCopyPaste);
     Vue.component("edn-list-mod", EdnListMod);
     Vue.component("edn-date-time", EdnDateTime);
   },
@@ -60,6 +62,7 @@ export {
   EdnColor,
   EdnLoad,
   EdnUrl,
+  EdnCopyPaste,
   EdnListMod,
   EdnDateTime,
 };
