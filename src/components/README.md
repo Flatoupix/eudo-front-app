@@ -74,7 +74,7 @@ N'éspérez pas utiliser eudo-front sur un projet from scratch.
   - `Choix multiple <edn-cat-x>`
   - `Mémo <edn-memo>`
   - `Url <edn-url>`
-  - `CopyPaste <edn-url>`
+  - `CopyPaste <edn-copypaste>`
 - Les numériques
   - `Numériques <edn-num>`
 - Les temporels
