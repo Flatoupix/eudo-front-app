@@ -7,11 +7,7 @@
         @click.alt="$vuetify.theme.dark = !$vuetify.theme.dark"
       >
         <v-row>
-          <img
-            height="400"
-            src="./components/images/logo.svg"
-            class="mx-auto"
-          />
+          <img height="400" src="./components/images/logo.svg" class="mx-auto" />
         </v-row>
         <v-row class="mb-10">
           <h2 class="mx-auto">Version 0.1.22</h2>
@@ -21,15 +17,11 @@
           <edn-load message="edn-load" form="double" anim="dots"></edn-load>
           <edn-load message="edn-load" form="simple" anim="blink"></edn-load>
           <edn-load message="edn-load" form="fill"></edn-load>
-        </v-row> -->
-        <edn-num
-          label="edn-num"
-          v-model="inptNum"
-          mask="##"
-          tooltip="NOMBRE"
-        ></edn-num>
+        </v-row>-->
+        <edn-num label="edn-num" v-model="inptNum" mask="##" tooltip="NOMBRE"></edn-num>
         <edn-field label="edn-field" v-model="urlString"></edn-field>
         <edn-url label="edn-url" v-model="urlString" readonly></edn-url>
+        <edn-copypaste label="edn-copypaste" v-model="copypasteString" readonly></edn-copypaste>
         <edn-cat label="edn-cat" v-model="selectedCat" :items="cat"></edn-cat>
         <edn-cat-x
           label="edn-cat-x"
@@ -46,18 +38,9 @@
           required
         />
 
-        <edn-time
-          v-model="time"
-          label="edn-time"
-          required="Ce champs doit être rempli !"
-        />
+        <edn-time v-model="time" label="edn-time" required="Ce champs doit être rempli !" />
         <v-row class="align-center justify-center">
-          <edn-date
-            v-model="dateInpt"
-            :popup="false"
-            :allowed-dates="allowedDates"
-            class="mx-3"
-          />
+          <edn-date v-model="dateInpt" :popup="false" :allowed-dates="allowedDates" class="mx-3" />
           <edn-time
             class="mx-3"
             v-model="time"
@@ -86,27 +69,15 @@
         ></edn-memo>
         <edn-mail label="edn-mail" v-model="mail" :required="true" />
         <edn-phone label="edn-phone" v-model="phone" />
-        <edn-check
-          label="edn-check"
-          v-model="checked"
-          :required="true"
-        ></edn-check>
+        <edn-check label="edn-check" v-model="checked" :required="true"></edn-check>
         <edn-switch label="edn-switch" v-model="switched"></edn-switch>
-        <edn-radio
-          label="edn-radio"
-          :radios="radios"
-          v-model="radioSelect"
-        ></edn-radio>
+        <edn-radio label="edn-radio" :radios="radios" v-model="radioSelect"></edn-radio>
         <edn-color label="edn-color" v-model="selectedColor"></edn-color>
         <v-row class="justify-center align-self-center">
-          <edn-btn class="mx-2" validation="skin2019" @click="Validate()"
-            >Valider</edn-btn
-          >
+          <edn-btn class="mx-2" validation="skin2019" @click="Validate()">Valider</edn-btn>
           <edn-btn class="mx-2" validation @click="Validate()">Valider</edn-btn>
           <edn-btn class="mx-2" @click="Reset()">Reset</edn-btn>
-          <edn-btn class="mx-2" color="secondary" @click="Reset()"
-            >Reset</edn-btn
-          >
+          <edn-btn class="mx-2" color="secondary" @click="Reset()">Reset</edn-btn>
         </v-row>
         <edn-list-mod
           ref="infScroll"
@@ -163,6 +134,8 @@ export default {
       time: "",
       phone: "",
       urlString: "www.google.com",
+      copypasteString:
+        '<script src="https://dev.eudonet.com/app/frm?tok=0D1BB1BA&cs=WLk7d-nU8RbrWpdMV7BlpeFzaizM5NzA&p=MMXJDpph5BKrGjAsUTHZoCl_H2ohON0ymyOapirv9fs%3d"/>',
       urlErrorUpdate: false,
 
       //Datas du mode liste
