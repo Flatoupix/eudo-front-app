@@ -16,6 +16,7 @@ import EdnColor from "./ednColor";
 import EdnLoad from "./ednLoad";
 import EdnUrl from "./ednUrl";
 import EdnListMod from "./ednListMod";
+import EdnDateTime from "./ednDateTime";
 
 const eudoFront = {
   install(Vue) {
@@ -37,6 +38,7 @@ const eudoFront = {
     Vue.component("edn-load", EdnLoad);
     Vue.component("edn-url", EdnUrl);
     Vue.component("edn-list-mod", EdnListMod);
+    Vue.component("edn-date-time", EdnDateTime);
   },
 };
 
@@ -59,6 +61,7 @@ export {
   EdnLoad,
   EdnUrl,
   EdnListMod,
+  EdnDateTime,
 };
 
 export default eudoFront;

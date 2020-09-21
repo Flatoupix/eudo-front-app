@@ -16,18 +16,18 @@ npm install eudo-front
 
 ```js
 //main.js
-import Vue from "vue";
-import App from "./App.vue";
-import Vuetify from "vuetify";
-import fr from "vuetify/es5/locale/fr";
-import eudoFront from "eudo-front";
-import "vuetify/dist/vuetify.min.css";
+import Vue from 'vue'
+import App from './App.vue'
+import Vuetify from 'vuetify'
+import fr from 'vuetify/es5/locale/fr'
+import eudoFront from 'eudo-front'
+import 'vuetify/dist/vuetify.min.css'
 
-Vue.use(eudoFront);
+Vue.use(eudoFront)
 
 const opts = {
   icons: {
-    iconfont: "mdi",
+    iconfont: 'mdi',
   },
   theme: {
     options: {
@@ -35,27 +35,27 @@ const opts = {
     },
     themes: {
       light: {
-        primary: "#bb1515",
-        secondary: "#757575",
-        accent: "#82B1FF",
-        error: "#FF5252",
-        info: "#2196F3",
-        success: "#4CAF50",
-        warning: "#FFC107",
+        primary: '#bb1515',
+        secondary: '#757575',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
       },
     },
   },
   lang: {
     locales: { fr },
-    current: "fr",
+    current: 'fr',
   },
-};
-Vue.use(Vuetify);
+}
+Vue.use(Vuetify)
 
 new Vue({
   vuetify: new Vuetify(opts),
-  render: (h) => h(App),
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app')
 ```
 
 N'éspérez pas utiliser eudo-front sur un projet from scratch.
@@ -114,8 +114,7 @@ N'éspérez pas utiliser eudo-front sur un projet from scratch.
 #### Exemple :
 
 ```html
-<edn-field label="Prénom" :required="true" /> // Ce cas enclenchera la valeur
-par défaut.
+<edn-field label="Prénom" :required="true" /> // Ce cas enclenchera la valeur par défaut.
 
 <edn-field label="Prénom" :required="Le prénom n'est pas rempli" /> // Celui-ci
 ```
@@ -143,26 +142,26 @@ Liste d'objets
 ```
 
 ```js
-var cities: ["Lyon", "Toulon", "Paris", "Marseille"];
+var cities: ['Lyon', 'Toulon', 'Paris', 'Marseille']
 
 var oCities: [
   {
     id: 1,
-    city: "Lyon",
+    city: 'Lyon',
   },
   {
     id: 2,
-    city: "Toulon",
+    city: 'Toulon',
   },
   {
     id: 3,
-    city: "Paris",
+    city: 'Paris',
   },
   {
     id: 4,
-    city: "Marseille",
+    city: 'Marseille',
   }
-];
+]
 ```
 
 ---
@@ -223,7 +222,7 @@ var oCities: [
 
 <center>
 
-## ![edn-btn](./images/edn-btn.jpg "Utilisation edn-btn")
+## ![edn-btn](./images/edn-btn.jpg 'Utilisation edn-btn')
 
 </center>
 
@@ -281,10 +280,7 @@ var oCities: [
 ```html
 <edn-time label="Choississez votre heure de rendez-vous" />
 
-<edn-time
-  label="Choississez votre plage horaire"
-  :slots="['20:20','20:40','21:00','21:20','21:40']"
-/>
+<edn-time label="Choississez votre plage horaire" :slots="['20:20','20:40','21:00','21:20','21:40']" />
 ```
 
 ---
@@ -360,7 +356,7 @@ var oCities: [
 
 <center>
 
-## ![edn-url](./images/edn-url.jpg "Utilisation edn-url")
+## ![edn-url](./images/edn-url.jpg 'Utilisation edn-url')
 
 ## </center>
 
@@ -378,24 +374,27 @@ var oCities: [
 #### Exemple
 
 ```html
-<edn-url label="edn-url"></edn-url>
+<edn-list-mod label="edn-list-mod"></edn-list-mod>
 ```
 
 <center>
 
-## ![edn-url](./images/edn-url.jpg "Utilisation edn-url")
+## ![edn-url](./images/edn-url.jpg 'Utilisation edn-url')
 
 ## </center>
 
 ## E-mail `<edn-mail/>`
 
-|      Paramètre      |       Type       |                                                                                                                      |
-| :-----------------: | :--------------: | -------------------------------------------------------------------------------------------------------------------- |
-|     **label:**      |     `String`     |                                                                                                                      |
-|    **required:**    | `Bool ou String` | Si une string est renseignée elle s'affichera en tant que message lorsqu'une erreur de type champs requis apparaîtra |
-| **invalidMailMsg:** |     `String`     | Le texte entré sera affiché lors de l'affichage d'une erreur de type... erreur de typage                             |
-|    **readonly:**    |      `Bool`      |                                                                                                                      |
-|    **disabled:**    |      `Bool`      |                                                                                                                      |
+|     Paramètre      |       Type       |     |
+| :----------------: | :--------------: | --- |
+|     **label**      |     `String`     |     |
+|    **required**    | `Bool ou String` |     |
+| **invalidMailMsg** |     `String`     |     |
+|    **readonly**    |      `Bool`      |     |
+|    **disabled**    |      `Bool`      |     |
+|    **:pattern**    |      `Bool`      |     |
+
+
 
 #### Exemple
 
@@ -404,6 +403,17 @@ var oCities: [
 ```
 
 # Changelog
+
+#### @0.1.24
+
+### `<edn-mail/>`
+
+- Mise à jour de la regEx de validation
+- Ajout de la personnalisation de regEx
+
+### `<edn-date-time/>` _new_
+
+- Création de edn-date-time
 
 #### @0.1.22
 
@@ -464,7 +474,7 @@ var oCities: [
 - Correction de la documentation de `edn-cat`
 - Ajout de `edn-url`
 
-  ![edn-url](https://media.giphy.com/media/f8zlr83qpAe0MHvWoc/giphy.gif "edn-url")
+  ![edn-url](https://media.giphy.com/media/f8zlr83qpAe0MHvWoc/giphy.gif 'edn-url')
 
   Voir documentation pour plus d'informations
 
@@ -494,7 +504,7 @@ var oCities: [
 #### @0.1.18
 
 - Après que `@Aagne` ait remonté un soucis de tranfert de v-model sur certains composants, un nouveau mixin a été créé `ednVModel.js` afin de faire hériter ce comportement à tout les composants.
-  ![alt text](./images/ednVModel.jpg "Avant/Après ednVModel.js")
+  ![alt text](./images/ednVModel.jpg 'Avant/Après ednVModel.js')
   <center>
   Ci-dessus screenshot du nettoyage des composants grâce à `ednVModel.js`
   </center>

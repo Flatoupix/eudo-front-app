@@ -29,6 +29,7 @@ module.exports = {
   assetsDir: "static",
   publicPath: "",
   devServer: {
+    disableHostCheck: true
     // proxy: {
     //   "/services": {
     //     target:

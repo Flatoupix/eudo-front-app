@@ -2,11 +2,11 @@
   <v-menu
     ref="menu"
     v-model="menu"
-    :close-on-content-click="false"
+    :close-on-pick-click="false"
     :return-value.sync="content"
     transition="fade-transition"
     offset-y
-    min-width="290"
+    min-width="300"
     v-if="$attrs.popup == true || $attrs.popup === ''"
   >
     <template v-slot:activator="{ on }">
@@ -15,7 +15,7 @@
         :id="$attrs.id"
         :disabled="$attrs.disabled"
         :label="$attrs.label"
-        :value="content ? $format($parseISO(content), format) : ''"
+        :value="content ? formattedDate : ''"
         v-on="on"
         :rules="rules"
         append-icon="mdi-calendar-range"
@@ -37,6 +37,7 @@
   </v-menu>
   <v-date-picker
     v-else
+    :ename="$attrs.ename"
     :color="colors.primary"
     no-title
     scrollable
@@ -44,13 +45,12 @@
     v-model="content"
     :locale="'Fr'"
     :first-day-of-week="1"
-    class="tripStyle"
   ></v-date-picker>
 </template>
 <script>
-import { ednRequired } from "./mixins/ednRequired";
-import { ednVModel } from "./mixins/ednVModel";
-import { format, parseISO } from "date-fns";
+import { ednRequired } from './mixins/ednRequired'
+import { ednVModel } from './mixins/ednVModel'
+import { format, parseISO } from 'date-fns'
 
 export default {
   inheritAttrs: false,
@@ -58,7 +58,7 @@ export default {
   props: {
     format: {
       type: String,
-      default: () => "dd-MM-yyyy",
+      default: () => 'dd-MM-yyyy',
     },
   },
   data() {
@@ -68,15 +68,20 @@ export default {
         primary: this.$vuetify.theme.currentTheme.primary,
         secondary: this.$vuetify.theme.currentTheme.secondary,
       },
-    };
+    }
+  },
+  computed: {
+    formattedDate() {
+      return format(parseISO(this.content), this.format)
+    },
   },
   mounted() {
-    this.$vuetify.theme.currentTheme.primary;
-    this.$format = format;
-    this.$parseISO = parseISO;
+    this.$vuetify.theme.currentTheme.primary
+    this.$format = format
+    this.$parseISO = parseISO
   },
   methods: {},
-};
+}
 </script>
 <style lang="stylus">
 div.tripStyle
