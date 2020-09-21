@@ -73,6 +73,8 @@ N'éspérez pas utiliser eudo-front sur un projet from scratch.
   - `Catalogue <edn-cat>`
   - `Choix multiple <edn-cat-x>`
   - `Mémo <edn-memo>`
+  - `Url <edn-url>`
+  - `CopyPaste <edn-url>`
 - Les numériques
   - `Numériques <edn-num>`
 - Les temporels
@@ -201,6 +203,43 @@ var oCities: [
 
 ```html
 <edn-memo label="Description" />
+```
+
+---
+
+## URL `<edn-url/>`
+
+|      Paramètre       |   Type   |                                  |
+| :------------------: | :------: | -------------------------------- |
+|      **label:**      | `String` |                                  |
+|    **readonly:**     |  `Bool`  |                                  |
+|    **disabled:**     |  `Bool`  |                                  |
+| **pasteContentRes:** | `String` | Message de confirmation de copie |
+|   **wrongUrlMsg:**   | `String` | Message d'url erronée            |
+|    **regexUrl:**     | `String` | Regex personnalisable            |
+|     **@onError**     |  `Bool`  | Etat des erreurs du champ        |
+
+#### Exemple
+
+```html
+<edn-url label="edn-url"></edn-url>
+```
+
+---
+
+## Copier/Coller `<edn-copypaste/>`
+
+|      Paramètre       |   Type   |                                  |
+| :------------------: | :------: | -------------------------------- |
+|      **label:**      | `String` |                                  |
+|    **readonly:**     |  `Bool`  |                                  |
+|    **disabled:**     |  `Bool`  |                                  |
+| **pasteContentRes:** | `String` | Message de confirmation de copie |
+
+#### Exemple
+
+```html
+<edn-copypaste label="edn-copypaste"></edn-copypaste>
 ```
 
 ---
@@ -336,43 +375,6 @@ var oCities: [
 
 ```html
 <edn-phone :label="Votre numéro de téléphone" mask="+## (#) # ## ## ###" />
-```
-
----
-
-## Heure `<edn-url/>`
-
-|      Paramètre       |   Type   |                                  |
-| :------------------: | :------: | -------------------------------- |
-|      **label:**      | `String` |                                  |
-|    **readonly:**     |  `Bool`  |                                  |
-|    **disabled:**     |  `Bool`  |                                  |
-| **pasteContentRes:** | `String` | Message de confirmation de copie |
-|   **wrongUrlMsg:**   | `String` | Message d'url erronée            |
-|    **regexUrl:**     | `String` | Regex personnalisable            |
-|     **@onError**     |  `Bool`  | Etat des erreurs du champ        |
-
-#### Exemple
-
-```html
-<edn-url label="edn-url"></edn-url>
-```
-
----
-
-## Heure `<edn-copypaste/>`
-
-|      Paramètre       |   Type   |                                  |
-| :------------------: | :------: | -------------------------------- |
-|      **label:**      | `String` |                                  |
-|    **readonly:**     |  `Bool`  |                                  |
-|    **disabled:**     |  `Bool`  |                                  |
-| **pasteContentRes:** | `String` | Message de confirmation de copie |
-
-#### Exemple
-
-```html
-<edn-copypaste label="edn-copypaste"></edn-copypaste>
 ```
 
 <center>
