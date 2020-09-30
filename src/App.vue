@@ -7,7 +7,7 @@
           <img height="400" src="./components/images/logo.svg" class="mx-auto" />
         </v-row>
         <v-row class="mb-10">
-          <h2 class="mx-auto">Version 0.1.24</h2>
+          <h2 class="mx-auto">Version 0.1.27</h2>
         </v-row>
 
         <!-- <v-row class="align-center justify-space-around">
@@ -46,12 +46,7 @@
             :slots="['00:20', '00:40', '01:20', '01:40', '02:40', '03:40', '04:40', '05:40', '06:40']"
           />
         </v-row>
-        <edn-memo
-          label="edn-memo"
-          html
-          v-model="inptMemo"
-          size="normal"
-        ></edn-memo>
+        <edn-memo label="edn-memo" html v-model="inptMemo" size="normal"></edn-memo>
         <edn-mail label="edn-mail" v-model="mail" :required="true" />
         <edn-phone label="edn-phone" v-model="phone" />
         <edn-check label="edn-check" v-model="checked" :required="true"></edn-check>
@@ -114,11 +109,11 @@ export default {
           value: '2',
         },
       ],
-      contentAbc: "abcdefghijklmnopqtrsuvwxyz",
-      date: "",
-      time: "",
-      phone: "",
-      urlString: "www.google.com",
+      contentAbc: 'abcdefghijklmnopqtrsuvwxyz',
+      date: '',
+      time: '',
+      phone: '',
+      urlString: 'www.google.com',
       copypasteString:
         '<script src="https://dev.eudonet.com/app/frm?tok=0D1BB1BA&cs=WLk7d-nU8RbrWpdMV7BlpeFzaizM5NzA&p=MMXJDpph5BKrGjAsUTHZoCl_H2ohON0ymyOapirv9fs%3d"/>',
       urlErrorUpdate: false,
