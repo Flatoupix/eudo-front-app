@@ -2,30 +2,21 @@
   <v-app :ripple="false">
     <!-- <logo class="mx-auto" :style="{ width: '30em' }"></logo> -->
     <v-form ref="form">
-      <v-container @click.ctrl="updateTime()" @click.alt="$vuetify.theme.dark = !$vuetify.theme.dark">
-        <v-row>
+      <v-container class="mt-5" @click.ctrl="updateTime()" @click.alt="$vuetify.theme.dark = !$vuetify.theme.dark">
+        <!-- <v-row>
           <img height="400" src="./components/images/logo.svg" class="mx-auto" />
-        </v-row>
+        </v-row> -->
         <v-row class="mb-10">
           <h2 class="mx-auto">Version 0.1.27</h2>
         </v-row>
 
-        <!-- <v-row class="align-center justify-space-around">
-          <edn-load message="edn-load" form="double" anim="dots"></edn-load>
-          <edn-load message="edn-load" form="simple" anim="blink"></edn-load>
-          <edn-load message="edn-load" form="fill"></edn-load>
-        </v-row> -->
-        <edn-date-time label="edn-date-time-picard"></edn-date-time>
+        <edn-date-time label="edn-date-time-picard" v-model="dateInpt" format="dd/MM/yyyy"></edn-date-time>
+        <!-- <edn-date popup label="edn-date" v-model="dateInpt" format="dd/MM/yyyy"></edn-date> -->
 
-        <!-- <edn-num
-          label="edn-num"
-          v-model="inptNum"
-          :mask="'###'"
-          tooltip="NOMBRE"
-        ></edn-num> -->
+        <edn-num label="edn-num" v-model="inptNum" :mask="'###'" tooltip="NOMBRE"></edn-num>
         <edn-field label="edn-field" v-model="urlString"></edn-field>
         <edn-url label="edn-url" v-model="urlString" readonly></edn-url>
-        <edn-copypaste label="edn-copypaste" v-model="copypasteString" readonly></edn-copypaste>
+        <edn-copy-paste label="edn-copypaste" v-model="copypasteString" readonly></edn-copy-paste>
         <edn-cat label="edn-cat" v-model="selectedCat" :items="cat"></edn-cat>
         <edn-cat-x
           label="edn-cat-x"
@@ -33,7 +24,6 @@
           :items="recette"
           tooltip="Selection de catégories"
         ></edn-cat-x>
-        <edn-date ename="COL11_4545" v-model="dateInpt" label="edn-date" id="ef456" popup required />
 
         <edn-time v-model="time" label="edn-time" required="Ce champs doit être rempli !" />
         <v-row class="align-center justify-center">
@@ -74,7 +64,7 @@
 </template>
 
 <script>
-import apiModule from '@/modules/api.js'
+// import apiModule from '@/modules/api.js'
 
 export default {
   name: 'App',
@@ -91,7 +81,7 @@ export default {
       switched: true,
       allowedDates: (val) => parseInt(val.split('-')[2], 10) % 2 === 0,
       inptText: 'efef',
-      dateInpt: new Date().toISOString(),
+      dateInpt: null,
       inptMemo: '',
       ingredient: [],
       recette: ['Cat 3', 'Cat 4', 'Cat 5'],
