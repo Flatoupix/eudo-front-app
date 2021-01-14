@@ -8,7 +8,8 @@
     "build-lib": "vue-cli-service build --target lib --name eudoFront ./src/components/eudo-front.js"
   },
   "dependencies": {
-    "component-minify": "^1.2.0",
+    "codesandbox-cli": "^0.0.0",
+    "component-minify": "^1.1.1",
     "core-js": "^3.6.5",
     "highlight.js": "^10.0.3",
     "npm-check-updates": "^6.0.1",
@@ -22,7 +23,7 @@
     "vue-quill-editor": "^3.0.6",
     "vue-smooth-dnd": "^0.8.1",
     "vue-the-mask": "^0.11.1",
-    "vue2-medium-editor": "^1.1.6",
+    "vue2-medium-editor": "^1.0.5",
     "vuetify": "^2.2.30",
     "webpack": "^4.44.2"
   },

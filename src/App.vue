@@ -10,19 +10,26 @@
         <v-row>
           <img height="400" src="./components/images/logo.svg" class="mx-auto" />
         </v-row>
+
         <v-row class="mb-10">
           <h2 class="mx-auto">Version {{ version }}</h2>
         </v-row>
-
-        <edn-date popup label="edn-date" v-model="dateInpt" format="dd/MM/yyyy"></edn-date>
-        <edn-num label="edn-num" v-model="inptNum"></edn-num>
-        <edn-field label="edn-field" required v-model="urlString"></edn-field>
-        <edn-url label="edn-url" v-model="urlString" readlsonly></edn-url>
-        <edn-copy-paste label="edn-copy-paste" v-model="copyPasteString" readonly></edn-copy-paste>
-        <edn-cat label="edn-cat multiple" multiple clearable :items="recette" v-model="selectedCatStrings"></edn-cat>
-
-        <edn-time v-model="time" label="edn-time" required="Ce champs doit être rempli !" />
-        <v-row class="align-center justify-center">
+        <!-- <edn-date popup label="edn-date" v-model="dateInpt" format="dd/MM/yyyy"></edn-date> -->
+        <edn-num label="edn-num" required v-model="inptNum"></edn-num>
+        <!-- <edn-field label="edn-field" v-model="urlString"></edn-field> -->
+        <!-- <edn-url label="edn-url" v-model="urlString" readlsonly></edn-url> -->
+        <!-- <edn-copy-paste label="edn-copy-paste" v-model="copyPasteString" readonly></edn-copy-paste> -->
+        <edn-cat
+          label="edn-cat multiple"
+          multiple
+          clearable
+          required
+          :items="recette"
+          v-model="selectedCatStrings"
+        ></edn-cat>
+        <!-- <v-select label="edn-cat multiple" clearable required :items="recette" v-model="selectedCatStrings"> </v-select> -->
+        <!-- <edn-time v-model="time" label="edn-time" required="Ce champs doit être rempli !" /> -->
+        <!-- <v-row class="align-center justify-center">
           <edn-date v-model="dateInpt" :popup="false" :allowed-dates="allowedDates" class="mx-3" />
           <edn-time
             class="mx-3"
@@ -31,15 +38,15 @@
             tripStyle
             :slots="['00:20', '00:40', '01:20', '01:40', '02:40', '03:40', '04:40', '05:40', '06:40']"
           />
-        </v-row>
-        <edn-date-time label="edn-date-time-picard" v-model="dateInpt" format="dd/MM/yyyy"></edn-date-time>
-        <edn-memo label="edn-memo" html v-model="inptMemo" size="normal"></edn-memo>
-        <edn-mail label="edn-mail" v-model="mail" />
-        <edn-phone label="edn-phone" v-model="phone" />
-        <edn-check label="edn-check" v-model="checked" :required="true"></edn-check>
-        <edn-switch label="edn-switch" v-model="switched"></edn-switch>
-        <edn-radio label="edn-radio" :radios="radios" v-model="radioSelect"></edn-radio>
-        <edn-color label="edn-color" v-model="selectedColor"></edn-color>
+        </v-row> -->
+        <!-- <edn-date-time label="edn-date-time-picard" v-model="dateInpt" format="dd/MM/yyyy"></edn-date-time> -->
+        <!-- <edn-memo label="edn-memo" html v-model="inptMemo" size="normal"></edn-memo> -->
+        <!-- <edn-mail label="edn-mail" v-model="mail" /> -->
+        <!-- <edn-phone label="edn-phone" v-model="phone" /> -->
+        <!-- <edn-check label="edn-check" v-model="checked" :required="true"></edn-check> -->
+        <!-- <edn-switch label="edn-switch" v-model="switched"></edn-switch> -->
+        <!-- <edn-radio label="edn-radio" :radios="radios" v-model="radioSelect"></edn-radio> -->
+        <!-- <edn-color label="edn-color" v-model="selectedColor"></edn-color> -->
         <v-row class="justify-center align-self-center">
           <edn-btn class="mx-2" validation="skin2019" @click="Validate()">Valider</edn-btn>
           <edn-btn class="mx-2" validation @click="Validate()">Valider</edn-btn>
@@ -55,13 +62,13 @@
           :page="1"
           :updateList="fetchItems"
         ></edn-list-mod> -->
-        <edn-file
+        <!-- <edn-file
           label="edn-file"
           v-model="fileUpload"
           @getImage="imageData = $event"
           @click:clear="imageData = null"
           @hasChanged="hasChanged = $event"
-        ></edn-file>
+        ></edn-file> -->
         <v-img v-if="imageData != null" :src="imageData" contain height="150"></v-img>
       </v-container>
     </v-form>
