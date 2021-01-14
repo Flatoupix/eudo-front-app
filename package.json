@@ -31,7 +31,7 @@
     "@vue/cli-service": "^4.4.1",
     "date-fns": "^2.14.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "sass": "^1.26.7",
+    "sass": "^1.29.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.4.4",
