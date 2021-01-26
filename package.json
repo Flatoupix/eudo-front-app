@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib --name eudoFront ./src/components/eudo-front.js"
+    "build-lib": "vue-cli-service build --target lib --name eudoFront ./src/components/eudo-front.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "codesandbox-cli": "^0.0.0",
@@ -28,8 +30,14 @@
     "webpack": "^4.44.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/vue": "^6.1.15",
     "@vue/cli-plugin-babel": "^4.4.1",
     "@vue/cli-service": "^4.4.1",
+    "babel-loader": "^8.2.2",
     "date-fns": "^2.14.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "sass": "^1.29.0",

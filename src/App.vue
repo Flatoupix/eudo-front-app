@@ -11,22 +11,22 @@
           <img height="400" src="./components/images/logo.svg" class="mx-auto" />
         </v-row>
 
-        <v-row class="mb-10">
+        <v-row class="my-10">
           <h2 class="mx-auto">Version {{ version }}</h2>
         </v-row>
         <!-- <edn-date popup label="edn-date" v-model="dateInpt" format="dd/MM/yyyy"></edn-date> -->
-        <edn-num label="edn-num" required v-model="inptNum"></edn-num>
+        <!-- <edn-num label="edn-num" required v-model="inptNum"></edn-num> -->
         <!-- <edn-field label="edn-field" v-model="urlString"></edn-field> -->
         <!-- <edn-url label="edn-url" v-model="urlString" readlsonly></edn-url> -->
         <!-- <edn-copy-paste label="edn-copy-paste" v-model="copyPasteString" readonly></edn-copy-paste> -->
-        <edn-cat
+        <!-- <edn-cat
           label="edn-cat multiple"
           multiple
           clearable
           required
           :items="recette"
           v-model="selectedCatStrings"
-        ></edn-cat>
+        ></edn-cat> -->
         <!-- <v-select label="edn-cat multiple" clearable required :items="recette" v-model="selectedCatStrings"> </v-select> -->
         <!-- <edn-time v-model="time" label="edn-time" required="Ce champs doit être rempli !" /> -->
         <!-- <v-row class="align-center justify-center">
@@ -41,7 +41,7 @@
         </v-row> -->
         <!-- <edn-date-time label="edn-date-time-picard" v-model="dateInpt" format="dd/MM/yyyy"></edn-date-time> -->
         <!-- <edn-memo label="edn-memo" html v-model="inptMemo" size="normal"></edn-memo> -->
-        <!-- <edn-mail label="edn-mail" v-model="mail" /> -->
+        <edn-mail irisMimic label="edn-mail" v-model="mail" />
         <!-- <edn-phone label="edn-phone" v-model="phone" /> -->
         <!-- <edn-check label="edn-check" v-model="checked" :required="true"></edn-check> -->
         <!-- <edn-switch label="edn-switch" v-model="switched"></edn-switch> -->
