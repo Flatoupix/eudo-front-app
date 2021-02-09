@@ -12,7 +12,7 @@
         </v-row>
 
         <v-row class="my-10">
-          <h2 class="mx-auto">Version test {{ version }}</h2>
+          <h2 class="mx-auto">Version {{ version }}</h2>
         </v-row>
         <!-- <edn-date popup label="edn-date" v-model="dateInpt" format="dd/MM/yyyy"></edn-date> -->
         <!-- <edn-num label="edn-num" required v-model="inptNum"></edn-num> -->
