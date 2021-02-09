@@ -16,14 +16,14 @@
         </v-row>
         <!-- <edn-date popup label="edn-date" v-model="dateInpt" format="dd/MM/yyyy"></edn-date> -->
         <!-- <edn-num label="edn-num" required v-model="inptNum"></edn-num> -->
-        <!-- <edn-field label="edn-field" v-model="urlString"></edn-field> -->
+        <!-- <edn-field label="edn-field"  :required="true" v-model="inptText"></edn-field> -->
         <!-- <edn-url label="edn-url" v-model="urlString" readlsonly></edn-url> -->
         <!-- <edn-copy-paste label="edn-copy-paste" v-model="copyPasteString" readonly></edn-copy-paste> -->
         <!-- <edn-cat
           label="edn-cat multiple"
           multiple
           clearable
-          required
+          :required="true"
           :items="recette"
           v-model="selectedCatStrings"
         ></edn-cat> -->
@@ -41,18 +41,24 @@
         </v-row> -->
         <!-- <edn-date-time label="edn-date-time-picard" v-model="dateInpt" format="dd/MM/yyyy"></edn-date-time> -->
         <!-- <edn-memo label="edn-memo" html v-model="inptMemo" size="normal"></edn-memo> -->
+        
+        <!-- <edn-goto linkMode='phone'>01.69.48.75.98</edn-goto> -->
+        <!-- <edn-mail label="edn-mail" v-model="mail" /> -->
+        
+        <edn-phone>0675849875</edn-phone>
         <edn-mail irisMimic label="edn-mail" v-model="mail" />
+        <edn-mail label="edn-mail" v-model="mail" />
         <!-- <edn-phone label="edn-phone" v-model="phone" /> -->
         <!-- <edn-check label="edn-check" v-model="checked" :required="true"></edn-check> -->
         <!-- <edn-switch label="edn-switch" v-model="switched"></edn-switch> -->
         <!-- <edn-radio label="edn-radio" :radios="radios" v-model="radioSelect"></edn-radio> -->
         <!-- <edn-color label="edn-color" v-model="selectedColor"></edn-color> -->
-        <v-row class="justify-center align-self-center">
+        <!-- <v-row class="justify-center align-self-center">
           <edn-btn class="mx-2" validation="skin2019" @click="Validate()">Valider</edn-btn>
           <edn-btn class="mx-2" validation @click="Validate()">Valider</edn-btn>
           <edn-btn class="mx-2" @click="Reset()">Reset</edn-btn>
           <edn-btn class="mx-2" color="secondary" @click="Reset()">Reset</edn-btn>
-        </v-row>
+        </v-row> -->
         <!-- <edn-list-mod
           ref="infScroll"
           :listMaxLength="listMaxLength"
@@ -94,7 +100,7 @@ export default {
       checked: false,
       switched: true,
       allowedDates: (val) => parseInt(val.split('-')[2], 10) % 2 === 0,
-      inptText: 'efef',
+      inptText: '',
       dateInpt: new Date().toISOString(),
       inptMemo: '',
       ingredient: [],
