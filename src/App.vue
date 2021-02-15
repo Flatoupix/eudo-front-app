@@ -85,6 +85,10 @@ export default {
             text: 'Zone résumer',
             link: '/resume',
           },
+          {
+            text: 'Zone Aide et Action',
+            link: '/helpAction',
+          },
         ],
       },
       {

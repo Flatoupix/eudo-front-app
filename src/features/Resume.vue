@@ -12,7 +12,7 @@
           <v-lazy min-height="52" transition="fade-transition">
             <div class="text-end pa-2">
               <span class="d-inline-block">
-                <v-btn target="_blank" href="https://github.com/Flatoupix/eudo-front/blob/master/ednPhone.vue" icon>
+                <v-btn target="_blank" href="https://github.com/Flatoupix/eudo-front-app/blob/resume/src/features/Resume.vue" icon>
                   <v-icon>mdi-github</v-icon>
                 </v-btn>
               </span>
