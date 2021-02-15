@@ -1,143 +1,115 @@
 <template>
-  <v-app :ripple="false">
-    <!-- <logo class="mx-auto" :style="{ width: '30em' }"></logo> -->
+  <div id="app">
+    <v-app id="inspire">
+      <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
+        <v-list dense>
+          <template v-for="item in items">
+            <v-list-group
+              v-if="item.children"
+              :key="item.text"
+              v-model="item.model"
+              :prepend-icon="item.iconPrepend"
+              :append-icon="item.model ? item.icon : item['icon-alt']"
+            >
+              <template v-slot:activator>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    {{ item.text }}
+                  </v-list-item-title>
+                </v-list-item-content>
+              </template>
+              
+              <v-list-item v-for="(child, i) in item.children" :key="i" link>
+                <v-list-item-action v-if="child.icon">
+                  <v-icon>{{ child.icon }}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content class="pa-0">
+                    <router-link class="pa-0" :to="child.link"><v-list-item-title class="pl-9 lineHeight">{{ child.text }}</v-list-item-title></router-link>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-group>
+            <v-list-item v-else :key="item.text" link>
+              <v-list-item-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
+                  {{ item.text }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+        </v-list>
+      </v-navigation-drawer>
 
-    <v-form ref="form" class="advFormRenderer">
-      <v-container
-        class="mt-5 text-xs"
-        @click.ctrl="updateTime()"
-        @click.alt="$vuetify.theme.dark = !$vuetify.theme.dark"
-      >
-        <v-row>
-          <img height="400" src="./components/images/logo.svg" class="mx-auto" />
-        </v-row>
-
-        <v-row class="my-10">
-          <h2 class="mx-auto">Version {{ version }}</h2>
-        </v-row>
-
-        <!-- Zone résumer -->
-        <div class="py-2 resum elevation-4">
-          <div class="d-flex">
-            <div v-if="resum.avatar && resum.avatar.Value != ''" style="padding: 0 0 0 15px;" class="text-center">
-              <v-avatar size="48">
-                <img :src="resum.avatar.Value" alt="John" />
-              </v-avatar>
-            </div>
-            <div style="overflow: hidden;padding: 0 15px 0 15px;">
-              <div>
-                <h3 class="ellipsis">
-                  {{
-                    resum.title.DisplayValue && resum.title.DisplayValue != ''
-                      ? resum.title.DisplayValue
-                      : resum.title.Value != ''
-                      ? resum.title.Value
-                      : resum.title.Label
-                  }}
-                </h3>
-              </div>
-              <div>
-                <h4 class="ellipsis">
-                  {{
-                    resum.sTitle.DisplayValue && resum.sTitle.DisplayValue != ''
-                      ? resum.sTitle.DisplayValue
-                      : resum.sTitle.Value != ''
-                      ? resum.sTitle.Value
-                      : resum.sTitle.Label
-                  }}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div v-if="inputOn" class="d-flex flex-wrap" color="grey lighten-2" flat tile>
-            <div v-for="input in resum.inputs" :key="input.message" class="min-w-20">
-              <edn-field class="mx-4 " irisMimic :label="input.Label" />
-            </div>
-          </div>
-        </div>
-        <!-- Zone résumer -->
-      </v-container>
-    </v-form>
-  </v-app>
+      <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="red darken-3" dark>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
+          <span font="2" class="hidden-sm-and-down">Eudo Front </span>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <span class="text-caption">Version {{ version }}</span>
+      </v-app-bar>
+      <v-main>
+        <v-container class="pa-4 pa-sm-6 pa-md-8" fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
 </template>
 
 <script>
 import ednField from './components/ednField.vue'
-// import apiModule from '@/modules/api.js'
 
 export default {
-  components: { ednField },
+  components: {
+    ednField,
+  },
   name: 'App',
-  data() {
-    return {
-      inputOn : false,
-      resum: {
-        title: {
-          Value: '',
-          Label: 'Nom',
-        },
-        sTitle: {
-          DisplayValue: '',
-          Value: '',
-          Label: 'Fonction principale',
-        },
-        avatar: {
-          //Value: '',
-          Value: 'https://cdn.vuetifyjs.com/images/john.jpg',
-          Label: 'Avatar',
-        },
-        inputs: [
+  props: {
+    source: String,
+  },
+  data: () => ({
+    dialog: false,
+    drawer: null,
+    items: [
+      {
+        iconPrepend : 'mdi-folder-sync-outline',
+        icon: 'mdi-chevron-up',
+        'icon-alt': 'mdi-chevron-down',
+        text: 'Features',
+        model: false,
+        children: [
           {
-            DisplayValue: 'Prospect',
-            Value: '2124',
-            Label: 'Catégorie',
-          },
-          {
-            DisplayValue: 'JOHANNA',
-            Value: '10068',
-            Label: 'Appartient à',
-          },
-          {
-            Value: '',
-            Label: 'Linkedin',
-          },
-          {
-            DisplayValue: 'BENEDETTI Didier',
-            Value: '3078',
-            Label: 'N+1',
-          },
-          {
-            DisplayValue: 'D',
-            Value: '13',
-            Label: 'Scoring',
-          },
-          {
-            Value: '',
-            Label: 'login kha',
+            text: 'Zone résumer',
+            link: '/resume',
           },
         ],
       },
-    }
-  },
-  methods: {
-    updateTime() {
-      this.time = '09:00'
-    },
-    Validate() {
-      this.$refs.form.validate()
-    },
-    Reset() {
-      this.$refs.form.reset()
-    },
-    testUrl(event) {
-      console.log(event)
-    },
-  },
-  mounted() {
-    // this.$vuetify.theme.dark = true
-  },
+      {
+        iconPrepend : 'mdi-widgets-outline',
+        icon: 'mdi-chevron-up',
+        'icon-alt': 'mdi-chevron-down',
+        text: 'Components',
+        model: false,
+        children: [
+          {
+            text: 'Edn-fields',
+            link: '/',
+          },
+          {
+            text: 'Edn-phone',
+            link: '/',
+          },
+        ],
+      },
+    ],
+  }),
+  methods: {},
 }
 </script>
+
 <style lang="stylus">
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap')
 
@@ -168,5 +140,14 @@ html
   .ellipsis
     white-space nowrap
     overflow hidden
-    text-overflow ellipsis 
+    text-overflow ellipsis
+
+  .v-application--is-ltr .v-list-item__icon:first-child
+    margin-right 12px
+
+  .v-application a
+    text-decoration none
+
+  .v-list--dense .v-list-item .v-list-item__title.lineHeight
+    line-height 32px  
 </style>
