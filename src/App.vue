@@ -82,8 +82,8 @@ export default {
         model: false,
         children: [
           {
-            text: 'Zone résumer',
-            link: '/resume',
+            text: 'Zone résumé',
+            link: '/summary',
           },
           {
             text: 'Zone Aide et Action',
@@ -95,7 +95,7 @@ export default {
         iconPrepend : 'mdi-widgets-outline',
         icon: 'mdi-chevron-up',
         'icon-alt': 'mdi-chevron-down',
-        text: 'Components',
+        text: 'UI Components',
         model: false,
         children: [
           {

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Components from './Components.vue'
-import Resume from './features/Resume.vue'
-import HelpAction from './features/HelpAction.vue'
+import Summary from './features/vues/vueSummary.vue'
+import HelpAction from './features/vues/vueHelpAction.vue'
 import Vuetify from 'vuetify/lib'
 import fr from 'vuetify/es5/locale/fr'
 import eudoFront from './components/eudo-front'
@@ -39,7 +39,7 @@ const opts = {
 
 const routes = [
   { path: '/', component: Components },
-  { path: '/resume', component: Resume },
+  { path: '/summary', component: Summary },
   { path: '/helpAction', component: HelpAction }
 ]
 const router = new VueRouter({
