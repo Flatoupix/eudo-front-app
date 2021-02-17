@@ -22,51 +22,19 @@ export default {
         linkGit: 'https://github.com/Flatoupix/eudo-front-app/blob/resume/src/features/components/Summary.vue',
       },
       summary: {
-        inputOn: false,
         title: {
           Value: '',
           Label: 'Nom',
         },
         sTitle: {
-          DisplayValue: '',
           Value: '',
           Label: 'Fonction principale',
         },
         avatar: {
-          //Value: '',
           Value: 'https://cdn.vuetifyjs.com/images/john.jpg',
           Label: 'Avatar',
-        },
-        inputs: [
-          {
-            DisplayValue: 'Prospect',
-            Value: '2124',
-            Label: 'Catégorie',
-          },
-          {
-            DisplayValue: 'JOHANNA',
-            Value: '10068',
-            Label: 'Appartient à',
-          },
-          {
-            Value: '',
-            Label: 'Linkedin',
-          },
-          {
-            DisplayValue: 'BENEDETTI Didier',
-            Value: '3078',
-            Label: 'N+1',
-          },
-          {
-            DisplayValue: 'D',
-            Value: '13',
-            Label: 'Scoring',
-          },
-          {
-            Value: '',
-            Label: 'login kha',
-          },
-        ],
+          Alt : "une image au hasard"
+        }
       },
     }
   },

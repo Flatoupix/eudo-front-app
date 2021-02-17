@@ -28,35 +28,18 @@ export default {
         tabs: [
           {
             slideTitle: 'Action',
-          }
+          },
         ],
-        contents: [
+        help: [
           {
             title: 'Aide',
-            subTitle: 'Voici une aide qui pourrait vous aidez',
-            text:
-              'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from ...',
-            link: 'help',
+            detail: `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from ... <br><a href="https://help" target="_blank">En savoir plus..</a>`,
           },
+        ],
+        action: [
           {
             title: 'Ajouter une nouvelle société',
-            subTitle: 'Remplissez les champs ci dessous',
-            text: '',
-            link: '',
-            rubriques: [
-              {
-                descId: 201,
-              },
-              {
-                descId: 202,
-              },
-              {
-                descId: 203,
-              },
-              {
-                descId: 204,
-              },
-            ],
+            detail: `It has roots in a piece of classical Latin literature from`,
           },
         ],
       },
