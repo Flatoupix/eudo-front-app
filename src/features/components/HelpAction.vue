@@ -1,6 +1,6 @@
 <template>
   <!-- Debut aide et action-->
-  <v-card  class="helpAction">
+  <v-card flat class="helpAction">
     <!-- Debut tabs bar -->
     <v-tabs v-model="helpActionContent.tab">
       <v-tab v-for="tab in helpActionContent.tabs" :key="tab.id">

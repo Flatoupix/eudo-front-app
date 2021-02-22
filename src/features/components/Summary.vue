@@ -1,6 +1,6 @@
 <template>
   <!-- Debut summary-->
-  <v-container class="summary py-2 elevation-4">
+  <v-container style="background-color:#fff;" color="red" fluid class="ma-0 summary py-2">
     <!-- Debut en-tête - avatar / titre / sous-titre -->
     <v-row no-gutters>
       <!-- Debut avatar -->

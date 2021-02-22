@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <v-app id="inspire">
+    <vueMain v-if="main"></vueMain>
+    <v-app v-else id="inspire">
       <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
         <v-list dense>
           <template v-for="item in items">
@@ -61,16 +62,19 @@
 
 <script>
 import ednField from './components/ednField.vue'
+import vueMain from './features/vues/vueMain.vue'
 
 export default {
   components: {
     ednField,
+    vueMain
   },
   name: 'App',
   props: {
     source: String,
   },
   data: () => ({
+    main : false,
     dialog: false,
     drawer: null,
     items: [
@@ -88,7 +92,7 @@ export default {
           {
             text: 'Zone Aide et Action',
             link: '/helpAction',
-          },
+          }
         ],
       },
       {
