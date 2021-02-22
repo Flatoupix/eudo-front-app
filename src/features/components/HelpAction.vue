@@ -1,6 +1,6 @@
 <template>
   <!-- Debut aide et action-->
-  <v-card color="basil" class="helpAction">
+  <v-card  class="helpAction">
     <!-- Debut tabs bar -->
     <v-tabs v-model="helpActionContent.tab">
       <v-tab v-for="tab in helpActionContent.tabs" :key="tab.id">
@@ -13,7 +13,7 @@
     <v-tabs-items v-model="helpActionContent.tab">
       <v-tab-item>
         <!-- Debut aide -->
-        <v-card v-for="item in helpActionContent.help" :key="item.id" class="pa-3 pt-0" color="basil" flat>
+        <v-card v-for="item in helpActionContent.help" :key="item.id" class="pa-3 pt-0" flat>
           <!-- Debut aide titre -->
           <v-card-title v-html="item.title" class="pb-1 pt-0"></v-card-title>
           <!-- Fin aide titre -->
@@ -25,7 +25,7 @@
         <!-- Fin aide -->
 
         <!-- Debut action -->
-        <v-card v-for="item in helpActionContent.action" :key="item.id" class="pa-3 pt-0" color="basil" flat>
+        <v-card v-for="item in helpActionContent.action" :key="item.id" class="pa-3 pt-0" flat>
           <!-- Debut action titre -->
           <v-card-title class="pb-1 pt-0">
             {{ item.title }}
@@ -40,8 +40,8 @@
           <!-- Fin action description -->
 
           <!-- Debut action content -->
-          <v-card class="pa-3" color="basil" flat>
-            <slot name="action"></slot>
+          <v-card v-if="actionContentAdded" class="pa-3" flat>
+            <slot name="actionContent"></slot>
           </v-card>
           <!-- Fin action content -->
         </v-card>
@@ -66,6 +66,12 @@ export default {
       type: Object,
       default: () => {},
     },
+  },
+  
+  computed: {
+    actionContentAdded() {
+      return this.$slots['actionContent']?.length > 0
+    }
   },
   methods: {},
   mounted() {},
