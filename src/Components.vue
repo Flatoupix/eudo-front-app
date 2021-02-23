@@ -10,24 +10,39 @@
     </v-form>
 
     <sectionComponent class="pb-10" :item="ednField">
-      <ednField irisMimic label="edn-fields"></ednField>
+      <ednField rdonly irisMimic label="edn-fields"></ednField>
     </sectionComponent>
     
     <sectionComponent class="pb-10" :item="ednPhone">
-      <ednPhone irisMimic label="edn-phone"></ednPhone>
-      <ednPhone label="edn-phone"></ednPhone>
+      <ednPhone rdonly irisMimic label="edn-phone"></ednPhone>
+      <ednPhone rdonly label="edn-phone"></ednPhone>
+    </sectionComponent>
+    
+    <sectionComponent class="pb-10" :item="ednUrl">
+      <ednUrl ednReadOnly rdonly irisMimic label="edn-url"></ednUrl>
+      <ednUrl irisMimic label="edn-url"></ednUrl>
+      <ednUrl label="edn-url"></ednUrl>
+    </sectionComponent>
+
+    
+    <sectionComponent class="pb-10" :item="ednCat">
+      <ednCat ednReadOnly rdonly irisMimic label="edn-cat"></ednCat>
+      <ednCat irisMimic label="edn-cat"></ednCat>
+      <ednCat label="edn-cat"></ednCat>
     </sectionComponent>
 
 
   </v-responsive>
 </template>
 <script>
-import ednField from './components/ednField.vue'
-import ednPhone from './components/ednPhone.vue'
-import sectionComponent from './sectionComponent.vue'
+import ednField from './components/ednField'
+import ednPhone from './components/ednPhone'
+import ednUrl from './components/ednUrl'
+import ednCat from './components/ednCat'
+import sectionComponent from './sectionComponent'
 
 export default {
-  components: {ednField, ednPhone, sectionComponent },
+  components: {ednField, ednPhone, ednUrl,ednCat, sectionComponent },
   name: 'Components',
   data() {
     return {
@@ -39,6 +54,18 @@ export default {
       },
       ednPhone: {
         title: 'Edn-Phone',
+        description: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ttranslation byH.
+          Rackham.<code>edn-phone</code> is to create groups of anything that should be controlled by a<strong>Sections 1.10.32 and 1.10.33</strong>.`,
+        linkGit: 'https://github.com/Flatoupix/eudo-front/blob/master/ednPhone.vue',
+      },
+      ednUrl: {
+        title: 'Edn-url',
+        description: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ttranslation byH.
+          Rackham.<code>edn-phone</code> is to create groups of anything that should be controlled by a<strong>Sections 1.10.32 and 1.10.33</strong>.`,
+        linkGit: 'https://github.com/Flatoupix/eudo-front/blob/master/ednPhone.vue',
+      },
+      ednCat: {
+        title: 'Edn-url',
         description: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Ttranslation byH.
           Rackham.<code>edn-phone</code> is to create groups of anything that should be controlled by a<strong>Sections 1.10.32 and 1.10.33</strong>.`,
         linkGit: 'https://github.com/Flatoupix/eudo-front/blob/master/ednPhone.vue',

@@ -3,6 +3,7 @@ import App from './App.vue'
 import Components from './Components.vue'
 import Summary from './features/vues/vueSummary.vue'
 import HelpAction from './features/vues/vueHelpAction.vue'
+import EntryFields from './features/vues/vueEntryField.vue'
 import Vuetify from 'vuetify/lib'
 import fr from 'vuetify/es5/locale/fr'
 import eudoFront from './components/eudo-front'
@@ -40,7 +41,8 @@ const opts = {
 const routes = [
   { path: '/', component: Components },
   { path: '/summary', component: Summary },
-  { path: '/helpAction', component: HelpAction }
+  { path: '/helpAction', component: HelpAction },
+  { path: '/entryField', component: EntryFields }
 ]
 const router = new VueRouter({
   routes // short for `routes: routes`

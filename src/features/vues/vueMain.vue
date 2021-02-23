@@ -12,7 +12,7 @@
 
     <v-main>
       <v-container class="pt-0" fill-height>
-        <v-row  class="mx-1 fill-height">
+        <v-row class="mx-1 fill-height">
           <v-col style="background-color:red;" cols="4">Content left (stepper)</v-col>
           <v-col style="background-color:green;" cols="8">Content right (zone de saisie)</v-col>
         </v-row>
@@ -26,7 +26,11 @@ import HelpAction from '../components/HelpAction.vue'
 import Summary from '../components/Summary.vue'
 import sectionComponent from '../../sectionComponent.vue'
 export default {
-  components: { sectionComponent, HelpAction,Summary },
+  components: {
+    sectionComponent,
+    HelpAction,
+    Summary,
+  },
   name: 'vueMain',
   data() {
     return {
@@ -58,7 +62,7 @@ export default {
         ],
       },
       drawer: null,
-      
+
       summary: {
         title: {
           Value: '',
@@ -71,8 +75,8 @@ export default {
         avatar: {
           Value: 'https://cdn.vuetifyjs.com/images/john.jpg',
           Label: 'Avatar',
-          Alt : "une image au hasard"
-        }
+          Alt: 'une image au hasard',
+        },
       },
     }
   },

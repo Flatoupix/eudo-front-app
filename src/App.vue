@@ -92,6 +92,10 @@ export default {
           {
             text: 'Zone Aide et Action',
             link: '/helpAction',
+          },
+          {
+            text: 'Zone saisie',
+            link: '/entryField',
           }
         ],
       },
